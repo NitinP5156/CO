@@ -27,9 +27,11 @@
     ],
     "env": {
         "DJANGO_SETTINGS_MODULE": "copopsoproject.settings",
-        "ALLOWED_HOSTS": "your-vercel-domain.vercel.app",
+        "PYTHONPATH": ".",
+        "ALLOWED_HOSTS": ".vercel.app",
         "DEBUG": "False",
         "SECRET_KEY": "@django_secret_key"
     },
-    "buildCommand": "pip install -r requirements.txt && python manage.py collectstatic --noinput"
+    "buildCommand": "pip install -r requirements.txt && python manage.py collectstatic --noinput",
+    "outputDirectory": "staticfiles"
 } 
