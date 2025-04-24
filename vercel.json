@@ -1,15 +1,15 @@
 {
     "version": 2,
     "framework": "django",
-    "buildCommand": "pip install -r requirements.txt && python manage.py collectstatic --noinput",
-    "outputDirectory": "staticfiles",
+    "buildCommand": "cd copopsoproject && pip install -r requirements.txt && python manage.py collectstatic --noinput",
+    "outputDirectory": "copopsoproject/staticfiles",
     "builds": [
         {
-            "src": "copopsoproject/wsgi.py",
+            "src": "copopsoproject/copopsoproject/wsgi.py",
             "use": "@vercel/python"
         },
         {
-            "src": "static/**",
+            "src": "copopsoproject/static/**",
             "use": "@vercel/static"
         }
     ],
@@ -24,12 +24,12 @@
         },
         {
             "src": "/(.*)",
-            "dest": "copopsoproject/wsgi.py"
+            "dest": "copopsoproject/copopsoproject/wsgi.py"
         }
     ],
     "env": {
         "DJANGO_SETTINGS_MODULE": "copopsoproject.settings",
-        "PYTHONPATH": ".",
+        "PYTHONPATH": "copopsoproject",
         "ALLOWED_HOSTS": ".vercel.app",
         "DEBUG": "False",
         "SECRET_KEY": "@django_secret_key"
