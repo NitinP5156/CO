@@ -1,5 +1,6 @@
 {
     "version": 2,
+    "framework": "django",
     "builds": [
         {
             "src": "copopsoproject/wsgi.py",
@@ -28,7 +29,7 @@
         "DJANGO_SETTINGS_MODULE": "copopsoproject.settings",
         "ALLOWED_HOSTS": "your-vercel-domain.vercel.app",
         "DEBUG": "False",
-        "SECRET_KEY": "@django_secret_key",
-        "DATABASE_URL": "@database_url"
-    }
+        "SECRET_KEY": "@django_secret_key"
+    },
+    "buildCommand": "pip install -r requirements.txt && python manage.py collectstatic --noinput"
 } 
