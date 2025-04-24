@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: copopso
+    env: python
+    buildCommand: pip install -r requirements.txt && python manage.py collectstatic --noinput
+    startCommand: gunicorn copopsoproject.wsgi:application
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: copopsoproject.settings
+      - key: DJANGO_SECRET_KEY
+        value: tgc45c89o%j1gryf_ls(cm^*o2-si9g48%!-r^qzh$yvm+=4j#
+      - key: DJANGO_DEBUG
+        value: False
+      - key: ALLOWED_HOSTS
+        value: .onrender.com
+      - key: PYTHONPATH
+        value: .
+    healthCheckPath: /
+    autoDeploy: true 

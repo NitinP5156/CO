@@ -1,6 +1,5 @@
 {
     "version": 2,
-    "framework": "django",
     "buildCommand": "cd copopsoproject && pip install -r requirements.txt && python manage.py collectstatic --noinput",
     "outputDirectory": "copopsoproject/staticfiles",
     "builds": [
